@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+    /* Seção Geral */
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+/* Fim Seção Geral */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a:hover{
+    background-color: #e70000;
+    color: white;
+    box-shadow: 0 0 5px #e70000,
+    0 0 25px #e70000,
+    0 0 50px #e70000,
+    0 0 100px #e70000;
+}
+
+
+/* Seção Menu */
+    /* Fundo da seção nav */
+    nav{
+        background-color: black;
+        width: 100%;
+        height: 150px;
+    }
+
+    .company{
+        margin: 0 50px;
+        line-height: 80px; 
+        width: 150px;
+        height: 150px;             
+    }
+
+    /* Flutuar menu na direita */
+    nav ul{
+        float: right;
+        margin-right: 40px;
+    }
+
+    /*Organização do menu */
+        nav ul li{
+            display: inline-block;
+            padding: 0 30px;
+            line-height: 130px;
+        }
+
+        nav ul li a{
+            color: #e70000;
+            font-size: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            margin: 40px 0;
+            letter-spacing: 2px;
+            border-top: 1px solid #e70000;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+    /* Fim Organização do menu */
+
+    /* Menu responsivo */
+    .checkbtn{
+        color: white;
+        float: right;
+        font-size: 30px;
+        margin-right: 40px;
+        cursor: pointer;
+        line-height: 80px;
+        display: none;
+    }
+
+    #check{
+        display: none;
+    }
+
+    @media(max-width: 952px){
+        .company{
+        width: 190px;
+        height: 150px;
+        padding-left: 40px;
+        }
+
+        nav ul li a{
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 1320px){
+        .checkbtn{
+            display: block;
+        }
+
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #222;
+            border-top: 1px solid red;
+            border-left: 1px solid red;
+            top: 80px;
+            left: 100%;
+            text-align: center;
+            transition: all 0.5s;
+        }
+
+        nav ul li{
+            display: block;
+            line-height: 30px;
+            margin: 50px 0;
+        }
+
+        nav ul li a{
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #check:checked ~ ul{
+            left: 0;
+        }
+    }
+    /* Fim Menu responsivo */
+
+/* Fim Seção Menu */
+
+/* ------ Inicio Seção Cardapio ------ */
+    .main{
+        background: #0f0f0f;
+        font-family: 'Audiowide', cursive;
+        border-top: 2px solid red ;
+        border-bottom: 2px solid red ;
+    }
+    /* ------ Inicio Menu Cardapio ------ */
+        section.catalogo-cardapio {
+            width: 100%;
+            padding-bottom: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-cardapio {
+            max-width: 1000px;
+            min-width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        
+        .content-cardapio h1{
+            color: white;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        section .card-wrapper-cardapio {
+            max-width: 900px;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        section .card-item-cardapio {
+            height: 450px;
+            background: rgb(26, 20, 20);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: solid 1px red;
+        }
+
+        section .card-item-cardapio:hover{
+            color: #fff;
+            z-index: 1000;
+            transition: 0.6s ease;
+            border: solid 4px red;
+            box-shadow: 0 0 100px rgba(255, 0, 0, 0.363);
+        }
+
+        section .card-item-cardapio:hover a.title{
+            font-size: 25px;
+        }
+
+        .conteudo-card-cardapio {
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .card-item-cardapio img {
+            margin-top: 10px;
+            border-radius: 10px;
+            width: 90%;
+        }
+
+        a.title{
+            font-size: 15px;
+            margin: 10px;
+            text-decoration: none;
+            background-color: transparent;
+            color: red;
+        }
+
+        a.title:hover{
+            color: rgb(68, 32, 32);
+        }
+
+        a.img{
+            text-align: center;
+            width: 85%;
+        }
+
+        a.img:hover{
+            background-color: transparent;
+        }
+
+        .card-item-cardapio a:hover{
+            box-shadow: none;
+        }
+
+        .card-item-cardapio p{
+            width: 90%;
+            font-size: 15px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    /* ------------ Fim Menu Cardapio ------------- */
+    /* ------ Inicio Seção Catalodo Cardapio ------ */
+        section .filter-card {
+            width: 900px;
+            height: 120px;
+            background: black;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            border-top: 2px solid red;
+            border-bottom: 2px solid red;
+        }
+
+        .search-input {
+        width: 600px;
+        height: 50px;
+        border: none;
+        border-radius: 4px 0px 0px 4px;
+        text-indent: 10px;
+        }
+
+        .search-button {
+        width: 150px;
+        height: 50px;
+        border-radius: 0px 4px 4px 0px;
+        border: none;
+        background: #0f0f0f;
+        color: red;
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: 0.2s ease;
+        }
+
+        .search-button:hover {
+        background: red;
+        color: white;
+        box-shadow: 0 0 100px rgba(255, 0, 0, 0.363);
+        }
+
+        .title-wrapper-catalog {
+        margin-top: 100px;
+        padding-bottom: 20px;
+        }
+
+        section.catalogo {
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        .content {
+            max-width: 1000px;
+            min-width: 300px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .content h1{
+            color: white;
+            font-size: 3rem;
+        }
+
+        .content h2{
+            color: white;
+            font-size: 2rem;
+            margin: 20px;
+        }
+
+        section .card-wrapper {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-gap: 30px;
+            margin-bottom: 50px;
+        }
+        /* Inicio Customização Card Itens */
+            section .card-item {
+                height: 500px;
+                background: rgb(26, 20, 20);
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-top: solid 2px red;
+                border-bottom: solid 2px red;
+                transition: transform .5s ease;
+            }
+            section .card-item:hover{
+                color: #fff;
+                transform: scale(1.1);
+                z-index: 1000;
+                transition: 0.6s ease;
+                border-top: solid 4px red;
+                border-bottom: solid 2px red;
+                box-shadow: 0 0 100px rgba(255, 0, 0, 0.363);
+            }
+
+            .conteudo-card {
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+            
+            .card-item img {
+                margin-top: 5px;
+                border-radius: 10px;
+                width: 90%;
+            }
+
+            a.title{
+                font-size: 20px;
+                margin: 20px;
+                text-decoration: none;
+                background-color: transparent;
+                color: red;
+            }
+
+            a.title:hover{
+                color: rgb(173, 121, 121);
+            }
+
+            a.img:hover{
+                background-color: transparent;
+            }
+
+            .card-item a:hover{
+                box-shadow: none;
+            }
+
+            .card-item p{
+                font-size: 0px;
+            }
+
+            .card-item:hover p {
+                padding-bottom:10px;
+                width: 90%;
+                font-size: 12px;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            /* Customização do Botão Flip */
+                .btn-flip {
+                    opacity: 1;
+                    outline: 0;
+                    color: white;
+                    line-height: 40px;
+                    position: relative;
+                    text-align: center;
+                    letter-spacing: 1px;
+                    display: inline-block;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    border-radius: 15px;
+                    margin: 5px;
+                }
+
+                .btn-flip:hover:after {
+                    opacity: 1;
+                    transform: translateY(0) rotateX(0);
+                    font-size: 15px;
+                }
+
+                .btn-flip:hover:before {
+                    opacity: 0;
+                    transform: translateY(50%) rotateX(90deg);
+                    transform: scale(1.0);
+                    font-size: 15px;
+                }
+
+                .btn-flip:after {
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    width: 100%;
+                    border-radius: 10px;
+                    color: red;
+                    display: block;
+                    transition: 0.5s;
+                    position: absolute;
+                    background: white;
+                    content: attr(data-back);
+                    transform: translateY(-50%) rotateX(90deg);
+                    font-size: 15px;
+                }
+
+                .btn-flip:before {
+                    top: 0;
+                    left: 0;
+                    opacity: 1;
+                    border-radius: 10px;
+                    color: white;
+                    display: block;
+                    padding: 0 20px;
+                    line-height: 40px;
+                    transition: 0.5s;
+                    position: relative;
+                    background: red;
+                    content: attr(data-front);
+                    transform: translateY(0) rotateX(0);
+                    font-size: 15px;
+                }
+            /* Fim do Botão Flip*/
+
+        /* Fim Customização Card Itens */
+
+    /*  Fim Seção Catalogo Cardapio  */
+
+/* ------ Fim Seção Cardapio ------ */
+
+    /* Seção Footer */
+        
+        .container{
+            max-width: 1170px;
+            margin: auto;
+        }
+    
+        .footer{
+            background-color: #0f0f0f;
+            padding: 70px 0;
+        }
+    
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer-col{
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer-col h4{
+            font-size: 18px;
+            color: #fff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: red;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col p:not(:last-child){
+            margin-bottom: 10px;
+        }
+
+        .footer-col p a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col p a:hover{
+            color: #fff;
+            padding-left: 8px;
+        }
+
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover{
+            color: #24262b;
+            background-color: rgb(255, 0, 0);
+        }
+
+        .no-click{
+            cursor: unset;
+        }
+
+        @media(max-width: 767px){
+            .footer-col{
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 576px){
+            .footer-col{
+                width: 100%;
+            }
+        }
+    /* Fim seção footer */
+    
